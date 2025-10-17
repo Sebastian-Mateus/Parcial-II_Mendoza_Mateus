@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="542.0" prefWidth="667.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.parcialii_mendoza_mateus.Inmobiliaria">
+   <children>
+      <Separator layoutY="109.0" prefHeight="0.0" prefWidth="657.0" />
+      <HBox layoutX="1.0" layoutY="109.0" prefHeight="335.0" prefWidth="659.0">
+         <children>
+            <TableView fx:id="tablaCuentas" prefHeight="345.0" prefWidth="657.0">
+               <columns>
+                  <TableColumn fx:id="colTipo" prefWidth="80.0" text="Tipo" />
+                  <TableColumn fx:id="colCiudad" prefWidth="160.0" text="Ciudad" />
+                  <TableColumn fx:id="colHabitaciones" prefWidth="173.0" text="Número Habitaciones" />
+                  <TableColumn fx:id="colNumeroPisos" prefWidth="123.0" text="Numero Pisos" />
+                  <TableColumn fx:id="colPrecio" prefWidth="123.0" text="Precio" />
+               </columns>
+            </TableView>
+         </children>
+      </HBox>
+      <Button fx:id="btnAgregar" layoutX="14.0" layoutY="479.0" mnemonicParsing="false" onAction="#onPresionarAgregar" prefHeight="31.0" prefWidth="104.0" text="Agregar" />
+      <Button fx:id="btnEliminar" layoutX="543.0" layoutY="479.0" mnemonicParsing="false" onAction="#OnEliminar" prefHeight="31.0" prefWidth="104.0" text="Eliminar" />
+      <Label layoutX="261.0" layoutY="21.0" prefHeight="35.0" prefWidth="139.0" text="Inmobilaria ">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="8.0" layoutY="67.0" text="Listado de los Inmuebles disponibles:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
