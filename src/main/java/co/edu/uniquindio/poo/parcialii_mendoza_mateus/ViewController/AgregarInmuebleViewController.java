@@ -1,13 +1,18 @@
 package co.edu.uniquindio.poo.parcialii_mendoza_mateus.ViewController;
 
-import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import co.edu.uniquindio.poo.parcialii_mendoza_mateus.Controller.AgregarInmuebleController;
+import co.edu.uniquindio.poo.parcialii_mendoza_mateus.Model.Inmueble;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 public class AgregarInmuebleViewController {
+
+    private AgregarInmuebleController agregarInmuebleController;
 
     @FXML
     private ResourceBundle resources;
@@ -22,7 +27,7 @@ public class AgregarInmuebleViewController {
     private TextField txtPisos;
 
     @FXML
-    private ComboBox<?> cbxTipo;
+    private ComboBox<String> cbxTipo;
 
     @FXML
     private TextField txtCiudad;
@@ -32,21 +37,33 @@ public class AgregarInmuebleViewController {
 
     @FXML
     void onTipo(ActionEvent event) {
+        System.out.println("Tipo seleccionado: " + cbxTipo.getValue());
+    }
 
+
+    @FXML
+    void initialize() {
+        cbxTipo.getItems().addAll("Casa", "Apartamento", "Finca", "Local");
     }
 
     @FXML
     void OnGuardar(ActionEvent event) {
+        String tipo = cbxTipo.getValue();
+        String ciudad = txtCiudad.getText();
+        int habitaciones = Integer.parseInt(txtPisos1.getText());
+        int pisos = Integer.parseInt(txtPisos.getText());
+        double precio = Double.parseDouble(txtPrecio.getText());
 
+        agregarInmuebleController.agregarNuevoInmueble(tipo, ciudad, habitaciones, pisos, precio);
+
+        cbxTipo.setValue(null);
+        txtCiudad.clear();
+        txtPisos1.clear();
+        txtPisos.clear();
+        txtPrecio.clear();
+
+        System.out.println("Inmueble guardado");
+        }
     }
 
-    @FXML
-    void initialize() {
-        assert txtPisos1 != null : "fx:id=\"txtPisos1\" was not injected: check your FXML file 'AgregarInmueble.fxml'.";
-        assert txtPisos != null : "fx:id=\"txtPisos\" was not injected: check your FXML file 'AgregarInmueble.fxml'.";
-        assert cbxTipo != null : "fx:id=\"cbxTipo\" was not injected: check your FXML file 'AgregarInmueble.fxml'.";
-        assert txtCiudad != null : "fx:id=\"txtCiudad\" was not injected: check your FXML file 'AgregarInmueble.fxml'.";
-        assert txtPrecio != null : "fx:id=\"txtPrecio\" was not injected: check your FXML file 'AgregarInmueble.fxml'.";
 
-    }
-}

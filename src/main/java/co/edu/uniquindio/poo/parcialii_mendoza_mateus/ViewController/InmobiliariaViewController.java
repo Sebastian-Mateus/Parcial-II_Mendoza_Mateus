@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.parcialii_mendoza_mateus.ViewController;
 
+
 import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -52,15 +53,7 @@ import javafx.scene.control.TableView;
 
         @FXML
         void initialize() {
-            assert tablaCuentas != null : "fx:id=\"tablaCuentas\" was not injected: check your FXML file 'Inmobiliaria.fxml'.";
-            assert colCiudad != null : "fx:id=\"colCiudad\" was not injected: check your FXML file 'Inmobiliaria.fxml'.";
-            assert colPrecio != null : "fx:id=\"colPrecio\" was not injected: check your FXML file 'Inmobiliaria.fxml'.";
-            assert btnEliminar != null : "fx:id=\"btnEliminar\" was not injected: check your FXML file 'Inmobiliaria.fxml'.";
-            assert colTipo != null : "fx:id=\"colTipo\" was not injected: check your FXML file 'Inmobiliaria.fxml'.";
-            assert colHabitaciones != null : "fx:id=\"colHabitaciones\" was not injected: check your FXML file 'Inmobiliaria.fxml'.";
-            assert colNumeroPisos != null : "fx:id=\"colNumeroPisos\" was not injected: check your FXML file 'Inmobiliaria.fxml'.";
-            assert btnAgregar != null : "fx:id=\"btnAgregar\" was not injected: check your FXML file 'Inmobiliaria.fxml'.";
 
         }
     }
-    
+

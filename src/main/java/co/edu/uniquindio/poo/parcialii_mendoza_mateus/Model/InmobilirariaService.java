@@ -16,6 +16,7 @@ public class InmobilirariaService {
                 pisos,
                 precio
         );
+        guardarInmueble (nuevoInmueble);
     }
 
     public void guardarInmueble (Inmueble inmueble){
