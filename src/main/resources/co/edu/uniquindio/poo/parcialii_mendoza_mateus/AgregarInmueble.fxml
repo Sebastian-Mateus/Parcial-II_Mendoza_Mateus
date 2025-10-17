@@ -9,7 +9,7 @@
 
 
 <AnchorPane prefHeight="420.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="co.edu.uniquindio.poo.parcialii_mendoza_mateus.AgregarInmuebleViewController">
+            fx:controller="co.edu.uniquindio.poo.parcialii_mendoza_mateus.ViewController.AgregarInmuebleViewController">
    <children>
       <Label layoutX="21.0" layoutY="23.0" prefHeight="24.0" prefWidth="215.0" text="Agrega un Inmueble:">
          <font>
