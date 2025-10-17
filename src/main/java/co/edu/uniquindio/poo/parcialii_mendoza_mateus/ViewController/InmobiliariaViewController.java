@@ -55,5 +55,12 @@ import javafx.scene.control.TableView;
         void initialize() {
 
         }
+
+        public void onPresionarAgregar(javafx.event.ActionEvent actionEvent) {
+        }
+
+        public void OnEliminar(javafx.event.ActionEvent actionEvent) {
+            
+        }
     }
 
