@@ -14,6 +14,8 @@ public class AgregarInmuebleViewController {
 
     private AgregarInmuebleController agregarInmuebleController;
 
+
+
     @FXML
     private ResourceBundle resources;
 

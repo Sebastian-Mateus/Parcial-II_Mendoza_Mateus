@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.poo.parcialii_mendoza_mateus.HelloApplication;
 import co.edu.uniquindio.poo.parcialii_mendoza_mateus.Model.Inmueble;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -59,6 +60,7 @@ import javafx.scene.control.TableView;
         }
 
         public void onPresionarAgregar(javafx.event.ActionEvent actionEvent) {
+            HelloApplication.cambiarVista("AgregarInmueble.fxml");
         }
 
         public void OnEliminar(javafx.event.ActionEvent actionEvent) {
@@ -66,7 +68,10 @@ import javafx.scene.control.TableView;
         }
 
         public void loadTble(){
-            
+
         }
+
+
+
     }
 
