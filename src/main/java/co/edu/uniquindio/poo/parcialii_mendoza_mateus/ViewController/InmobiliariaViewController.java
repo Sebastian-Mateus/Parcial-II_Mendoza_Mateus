@@ -4,6 +4,8 @@ package co.edu.uniquindio.poo.parcialii_mendoza_mateus.ViewController;
 import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import co.edu.uniquindio.poo.parcialii_mendoza_mateus.Model.Inmueble;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -18,25 +20,25 @@ import javafx.scene.control.TableView;
         private URL location;
 
         @FXML
-        private TableView<?> tablaCuentas;
+        private TableView<Inmueble> tablaCuentas;
 
         @FXML
-        private TableColumn<?, ?> colCiudad;
+        private TableColumn<Inmueble, String> colCiudad;
 
         @FXML
-        private TableColumn<?, ?> colPrecio;
+        private TableColumn<Inmueble, Double> colPrecio;
 
         @FXML
         private Button btnEliminar;
 
         @FXML
-        private TableColumn<?, ?> colTipo;
+        private TableColumn<Inmueble, String> colTipo;
 
         @FXML
-        private TableColumn<?, ?> colHabitaciones;
+        private TableColumn<Inmueble, Integer> colHabitaciones;
 
         @FXML
-        private TableColumn<?, ?> colNumeroPisos;
+        private TableColumn<Inmueble, Integer> colNumeroPisos;
 
         @FXML
         private Button btnAgregar;
@@ -60,6 +62,10 @@ import javafx.scene.control.TableView;
         }
 
         public void OnEliminar(javafx.event.ActionEvent actionEvent) {
+            
+        }
+
+        public void loadTble(){
             
         }
     }
