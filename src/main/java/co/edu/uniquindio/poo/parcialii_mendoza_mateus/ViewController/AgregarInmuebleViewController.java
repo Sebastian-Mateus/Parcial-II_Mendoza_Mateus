@@ -7,6 +7,7 @@ import co.edu.uniquindio.poo.parcialii_mendoza_mateus.Controller.AgregarInmueble
 import co.edu.uniquindio.poo.parcialii_mendoza_mateus.Model.Inmueble;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
@@ -37,35 +38,58 @@ public class AgregarInmuebleViewController {
     @FXML
     private TextField txtPrecio;
 
-    @FXML
-    void onTipo(ActionEvent event) {
-        System.out.println("Tipo seleccionado: " + cbxTipo.getValue());
-    }
 
 
     @FXML
     void initialize() {
         cbxTipo.getItems().addAll("Casa", "Apartamento", "Finca", "Local");
+        agregarInmuebleController = new AgregarInmuebleController();
     }
 
     @FXML
     void OnGuardar(ActionEvent event) {
-        String tipo = cbxTipo.getValue();
-        String ciudad = txtCiudad.getText();
-        int habitaciones = Integer.parseInt(txtPisos1.getText());
-        int pisos = Integer.parseInt(txtPisos.getText());
-        double precio = Double.parseDouble(txtPrecio.getText());
+        try {
+            String tipo = cbxTipo.getValue();
+            String ciudad = txtCiudad.getText();
+            int habitaciones = Integer.parseInt(txtPisos1.getText());
+            int pisos = Integer.parseInt(txtPisos.getText());
+            double precio = Double.parseDouble(txtPrecio.getText());
 
-        agregarInmuebleController.agregarNuevoInmueble(tipo, ciudad, habitaciones, pisos, precio);
+            if (tipo == null || tipo.isEmpty() || ciudad.isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Campos incompletos");
+                alert.setHeaderText(null);
+                alert.setContentText("Por favor, completa todos los campos.");
+                alert.showAndWait();
+                return;
+            }
 
-        cbxTipo.setValue(null);
-        txtCiudad.clear();
-        txtPisos1.clear();
-        txtPisos.clear();
-        txtPrecio.clear();
+            agregarInmuebleController.agregarNuevoInmueble(tipo, ciudad, habitaciones, pisos, precio);
 
-        System.out.println("Inmueble guardado");
+            // Limpiar los campos
+            cbxTipo.setValue(null);
+            txtCiudad.clear();
+            txtPisos1.clear();
+            txtPisos.clear();
+            txtPrecio.clear();
+
+            // Mostrar mensaje de éxito
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Inmueble guardado");
+            alert.setHeaderText(null);
+            alert.setContentText("El inmueble ha sido agregado exitosamente.");
+            alert.showAndWait();
+
+            System.out.println("Inmueble guardado");
+
+        } catch (NumberFormatException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error de formato");
+            alert.setHeaderText(null);
+            alert.setContentText("Por favor, ingresa valores numéricos válidos para habitaciones, pisos y precio.");
+            alert.showAndWait();
         }
+    }
     }
 
 

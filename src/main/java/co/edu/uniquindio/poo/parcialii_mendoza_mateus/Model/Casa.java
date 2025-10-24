@@ -6,4 +6,15 @@ public class Casa extends AbstractInmueble{
     public Casa(String ciudad, int habitaciones, int pisos, double precio) {
         super("Casa", ciudad, habitaciones, pisos, precio); // Define el tipo fijo
     }
+
+    @Override
+    public String toString() {
+        return "Casa{" +
+                "tipo='" + tipo + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", habitaciones=" + habitaciones +
+                ", pisos=" + pisos +
+                ", precio=" + precio +
+                '}';
+    }
 }

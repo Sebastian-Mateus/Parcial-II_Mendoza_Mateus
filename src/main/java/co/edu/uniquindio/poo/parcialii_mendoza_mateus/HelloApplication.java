@@ -12,7 +12,7 @@ public class HelloApplication extends Application {
 
     private static Stage primaryStage ;
 
-    // Metodo que devuelve el stage principal
+
     public static Stage getPrimaryStage() {
         return primaryStage;
     }

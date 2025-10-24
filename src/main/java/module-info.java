@@ -8,4 +8,6 @@ module co.edu.uniquindio.poo.parcialii_mendoza_mateus {
 
     exports co.edu.uniquindio.poo.parcialii_mendoza_mateus;
     exports co.edu.uniquindio.poo.parcialii_mendoza_mateus.ViewController;
+    exports co.edu.uniquindio.poo.parcialii_mendoza_mateus.Model;
+
 }

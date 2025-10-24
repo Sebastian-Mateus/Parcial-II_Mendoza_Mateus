@@ -4,14 +4,21 @@ import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.poo.parcialii_mendoza_mateus.Controller.InmobiliariaController;
 import co.edu.uniquindio.poo.parcialii_mendoza_mateus.HelloApplication;
 import co.edu.uniquindio.poo.parcialii_mendoza_mateus.Model.Inmueble;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-    public class InmobiliariaViewController {
+
+
+public class InmobiliariaViewController {
+
+        private InmobiliariaController inmobiliariaController;
 
         @FXML
         private ResourceBundle resources;
@@ -40,35 +47,55 @@ import javafx.scene.control.TableView;
         @FXML
         private TableColumn<Inmueble, Integer> colNumeroPisos;
 
-        @FXML
-        private Button btnAgregar;
 
-        @FXML
-        void onPresionarAgregar(ActionEvent event) {
 
-        }
 
-        @FXML
-        void OnEliminar(ActionEvent event) {
 
-        }
 
         @FXML
         void initialize() {
+            inmobiliariaController = new InmobiliariaController();
 
+            colTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
+            colCiudad.setCellValueFactory(new PropertyValueFactory<>("ciudad"));
+            colHabitaciones.setCellValueFactory(new PropertyValueFactory<>("habitaciones"));
+            colNumeroPisos.setCellValueFactory(new PropertyValueFactory<>("pisos"));
+            colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
+
+            loadTable();
         }
 
-        public void onPresionarAgregar(javafx.event.ActionEvent actionEvent) {
-            HelloApplication.cambiarVista("AgregarInmueble.fxml");
-        }
+    public void loadTable() {
+        inmobiliariaController.sincronizarDatos();
+        tablaCuentas.setItems(inmobiliariaController.getObservableInmuebles());
+        tablaCuentas.refresh();
+    }
 
+
+    @FXML
         public void OnEliminar(javafx.event.ActionEvent actionEvent) {
-            
+            Inmueble inmuebleSeleccionado = tablaCuentas.getSelectionModel().getSelectedItem();
+
+            if (inmuebleSeleccionado != null) {
+                inmobiliariaController.eliminarInmueble(inmuebleSeleccionado);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Eliminación exitosa");
+                alert.setHeaderText(null);
+                alert.setContentText("El inmueble ha sido eliminado correctamente.");
+                alert.showAndWait();
+
+                loadTable();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Ningún inmueble seleccionado");
+                alert.setHeaderText(null);
+                alert.setContentText("Por favor, selecciona un inmueble de la tabla para eliminar.");
+                alert.showAndWait();
+            }
         }
 
-        public void loadTble(){
 
-        }
 
     }
 

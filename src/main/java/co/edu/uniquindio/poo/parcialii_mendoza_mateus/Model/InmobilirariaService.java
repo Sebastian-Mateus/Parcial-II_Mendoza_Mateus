@@ -17,6 +17,7 @@ public class InmobilirariaService {
                 precio
         );
         guardarInmueble (nuevoInmueble);
+        System.out.println(nuevoInmueble);
     }
 
     public void guardarInmueble (Inmueble inmueble){
