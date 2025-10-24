@@ -11,7 +11,7 @@
    <children>
       <BorderPane prefHeight="543.0" prefWidth="668.0">
          <top>
-            <Pane prefHeight="120.0" prefWidth="668.0" style="-fx-background-color: #afcecf;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="120.0" prefWidth="710.0" style="-fx-background-color: #afcecf;" BorderPane.alignment="CENTER">
                <children>
                   <Label layoutX="265.0" layoutY="43.0" prefHeight="35.0" prefWidth="139.0" text="Inmobilaria ">
                      <font>
