@@ -25,7 +25,6 @@ public class DatabaseAdapter {
     }
 
 
-
     /**
      * Elimina un inmueble y actualiza ambas listas
      */
@@ -41,6 +40,5 @@ public class DatabaseAdapter {
         observableInmuebles.clear();
         observableInmuebles.addAll(database.getInmuebles());
     }
-
 
 }

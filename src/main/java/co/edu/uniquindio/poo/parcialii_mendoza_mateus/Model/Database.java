@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Database {
 
-    //PATRON SINGLETONE
+    //PATRON SINGLETON
 
     private static Database database;
     private ArrayList<Inmueble> inmuebles;

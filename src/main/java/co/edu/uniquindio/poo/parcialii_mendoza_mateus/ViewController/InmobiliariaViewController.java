@@ -1,11 +1,10 @@
 package co.edu.uniquindio.poo.parcialii_mendoza_mateus.ViewController;
 
-import java.awt.event.ActionEvent;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.parcialii_mendoza_mateus.Controller.InmobiliariaController;
-import co.edu.uniquindio.poo.parcialii_mendoza_mateus.HelloApplication;
 import co.edu.uniquindio.poo.parcialii_mendoza_mateus.Model.Inmueble;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -13,8 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-
-
 
 public class InmobiliariaViewController {
 
@@ -46,11 +43,6 @@ public class InmobiliariaViewController {
 
         @FXML
         private TableColumn<Inmueble, Integer> colNumeroPisos;
-
-
-
-
-
 
         @FXML
         void initialize() {
@@ -94,8 +86,6 @@ public class InmobiliariaViewController {
                 alert.showAndWait();
             }
         }
-
-
 
     }
 

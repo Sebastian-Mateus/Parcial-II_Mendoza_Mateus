@@ -40,12 +40,10 @@ public class DashBoardViewController {
 
                         Parent nuevaVista = loader.load();
 
-                        // Aqui se carga el nuevo contenido en el dashboard.
                         Dashboard.setCenter(nuevaVista);
 
                 } catch (IOException e) {
                         e.printStackTrace();
-                        // Manejar error de FXML no encontrado o problema de carga
                 }
         }
 

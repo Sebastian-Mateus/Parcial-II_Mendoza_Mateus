@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.parcialii_mendoza_mateus.Controller.AgregarInmuebleController;
-import co.edu.uniquindio.poo.parcialii_mendoza_mateus.Model.Inmueble;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -14,8 +13,6 @@ import javafx.scene.control.TextField;
 public class AgregarInmuebleViewController {
 
     private AgregarInmuebleController agregarInmuebleController;
-
-
 
     @FXML
     private ResourceBundle resources;
@@ -37,8 +34,6 @@ public class AgregarInmuebleViewController {
 
     @FXML
     private TextField txtPrecio;
-
-
 
     @FXML
     void initialize() {
@@ -66,14 +61,12 @@ public class AgregarInmuebleViewController {
 
             agregarInmuebleController.agregarNuevoInmueble(tipo, ciudad, habitaciones, pisos, precio);
 
-            // Limpiar los campos
             cbxTipo.setValue(null);
             txtCiudad.clear();
             txtPisos1.clear();
             txtPisos.clear();
             txtPrecio.clear();
 
-            // Mostrar mensaje de éxito
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Inmueble guardado");
             alert.setHeaderText(null);
