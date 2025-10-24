@@ -5,7 +5,7 @@ import javafx.collections.ObservableList;
 
 /**
  * PATRÓN ADAPTER
- * Adapta el ArrayList de Database a ObservableList para JavaFX TableView
+ * Adapta el ArrayList de Database a ObservableList para la tabla de JavaFX
  */
 public class DatabaseAdapter {
 
@@ -24,13 +24,7 @@ public class DatabaseAdapter {
         return observableInmuebles;
     }
 
-    /**
-     * Agrega un inmueble y actualiza ambas listas
-     */
-    public void addInmueble(Inmueble inmueble) {
-        database.getInmuebles().add(inmueble);
-        observableInmuebles.add(inmueble);
-    }
+
 
     /**
      * Elimina un inmueble y actualiza ambas listas
@@ -48,11 +42,5 @@ public class DatabaseAdapter {
         observableInmuebles.addAll(database.getInmuebles());
     }
 
-    /**
-     * Limpia todas las listas
-     */
-    public void clear() {
-        database.getInmuebles().clear();
-        observableInmuebles.clear();
-    }
+
 }
