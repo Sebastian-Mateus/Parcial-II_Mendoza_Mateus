@@ -1,6 +1,5 @@
 package co.edu.uniquindio.poo.parcialii_mendoza_mateus.ViewController;
 
-
 import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -70,8 +69,6 @@ import javafx.scene.control.TableView;
         public void loadTble(){
 
         }
-
-
 
     }
 
